@@ -1,121 +1,146 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Daily Journal</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  </head>
-  <body>
+<div class="container mt-4">
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-dark mb-2" data-bs-toggle="modal" data-bs-target="#modalTambahGallery">
+        <i class="bi bi-plus-lg"></i> Tambah Gambar
+    </button>
+    <div class="row">
+        <div class="table-responsive" id="gallery_data">
 
-    <!-- navbar -->
-
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top">
-        <div class="container">
-          <a class="navbar-brand fw-bold" href="#">My Daily Journal</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav ms-auto">
-              <a class="nav-link" aria-current="page" href="homepage.html">Home</a>
-              <a class="nav-link" href="article.html">Article</a>
-              <a class="nav-link active" href="#">Gallery</a>
-            </div>
-          </div>
         </div>
-      </nav>
-
-    <!-- navbar end -->
-
-
-    <!-- content -->
-    
-    <div class="content m-5">
-            <div class="gallery container">
-                <header>
-                    <h1 class="fw-bold text-center p-5">Gallery</h1>
-                </header>
-
-                <div class="carouselImage">
-                  <div id="carouselExample" class="carousel slide">
-                    <div class="carousel-inner">
-                      <div class="carousel-item active">
-                        <img src="img/img1.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="img/img2.jpg" class="d-block w-100" alt="...">
-                      </div>
-                      <div class="carousel-item">
-                        <img src="img/img3.jpg" class="d-block w-100" alt="...">
-                      </div>
-                    </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Previous</span>
-                    </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="visually-hidden">Next</span>
-                    </button>
-                  </div>
-                </div>
-
-
-                <div class="cardGallery mt-5 container">
-                  <div class="card-group mx-auto p-2">
-                    <div class="card" style="width: 18rem;">
-                      <img src="img/img2.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      </div>
-                    </div>
-
-                    <div class="card" style="width: 18rem;">
-                      <img src="img/img3.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      </div>
-                    </div>
-
-                    <div class="card" style="width: 18rem;">
-                      <img src="img/img1.jpg" class="card-img-top" alt="...">
-                      <div class="card-body">
-                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                      </div>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
     </div>
-
-    <!-- content end -->
-
-
-    <!-- footer -->
-     <footer class="bg-dark">
-        <div class="footerSection mt-3">
-            <div class="mediaSocial d-flex justify-content-center mb-2">
-                <a class="text-light" href="">
-                    <i class="fa-brands fa-instagram me-2"></i>
-                  </a>
-                  <a class="text-light" href="">
-                    <i class="fa-brands fa-twitter ms-2 me-2"></i>
-                  </a>
-                  <a class="text-light" href="">
-                    <i class="fa-brands fa-whatsapp ms-2"></i>
-                  </a>
-            </div>
-            <div class="nameYear">
-                <p class="text-light">Oddy Bagus Ifanda @ 2024</p>
+    <!-- Awal Modal Tambah-->
+    <div class="modal fade" id="modalTambahGallery" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Tambah Gambar Gallery</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form method="post" action="" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                                <label for="image" class="form-label">Gambar</label>
+              <input type="file" class="form-control" id="image" name="image" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="desc" class="form-label">Deskripsi</label>
+                            <textarea class="form-control" id="desc" placeholder="Tuliskan Deskripsi" name="desc" required></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <input type="submit" value="simpan" name="simpan_gallery" class="btn btn-dark">
+                    </div>
+                </form>
             </div>
         </div>
-     </footer>
-    <!-- footer end -->
+    </div>
+    <!-- Akhir Modal Tambah-->
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
-</html>
+<script>
+$(document).ready(function(){
+    load_gallery(1); 
+
+    function load_gallery(hlm){
+        $.ajax({
+            url : "gallery_data.php",  
+            method : "POST",
+            data : { hlm: hlm }, 
+            success : function(data){
+                $('#gallery_data').html(data); 
+            }
+        });
+    }
+
+    $(document).on('click', '.halaman', function(){
+        var hlm = $(this).attr("id");
+        load_gallery(hlm);  
+    });
+});
+
+
+</script>
+
+<?php
+include "upload_foto.php";
+
+if (isset($_POST['simpan_gallery'])) {
+  $desc = $_POST['desc'];
+  $image = '';
+  $nama_image = $_FILES['image']['name'];
+
+  if ($nama_image != '') {
+      $cek_upload = upload_foto($_FILES["image"]);
+
+      if ($cek_upload['status']) {
+          $image = $cek_upload['message'];
+      } else {
+          echo "<script>
+              alert('" . $cek_upload['message'] . "');
+              document.location='admin.php?page=gallery';
+          </script>";
+          die;
+      }
+  }
+
+  if (isset($_POST['id'])) {
+      $id = $_POST['id'];
+
+      if ($nama_image == '') {
+          $image = $_POST['image_lama'];
+      } else {
+          unlink("img/" . $_POST['image_lama']);
+      }
+
+      $stmt = $conn->prepare("UPDATE gallery SET image = ?, `desc` = ? WHERE id = ?");
+      $stmt->bind_param("ssi", $image, $desc, $id);
+      $simpan = $stmt->execute();
+  } else {
+      // Insert data baru
+      $stmt = $conn->prepare("INSERT INTO gallery (image, `desc`) VALUES (?, ?)");
+      $stmt->bind_param("ss", $image, $desc);
+      $simpan = $stmt->execute();
+  }
+
+  if ($simpan) {
+      echo "<script>
+          alert('Data berhasil disimpan');
+          document.location='admin.php?page=gallery';
+      </script>";
+  } else {
+      echo "<script>
+          alert('Data gagal disimpan');
+          document.location='admin.php?page=gallery';
+      </script>";
+  }
+
+  $stmt->close();
+  $conn->close();
+}
+
+
+
+
+
+// Hapus gallery
+if (isset($_POST['hapus'])) {
+  $id = $_POST['id'];
+  $image = $_POST['image'];
+
+  if ($image != '') {
+      unlink("img/" . $image); 
+  }
+
+  $stmt = $conn->prepare("DELETE FROM gallery WHERE id = ?");
+  $stmt->bind_param("i", $id);
+  if ($stmt->execute()) {
+      echo "<script>
+          alert('Gambar berhasil dihapus');
+          document.location='admin.php?page=gallery';
+      </script>";
+  }
+  $stmt->close();
+}
+
+?>

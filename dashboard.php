@@ -1,14 +1,16 @@
 <?php
 
 $sql = "SELECT * FROM article ORDER BY tanggal DESC";
-$hasil = $conn->query($sql);
+$sql2 = "SELECT * FROM gallery ORDER BY tanggal DESC";
+$article = $conn->query($sql);
+$gallery = $conn->query($sql2);
 
-$jumlah_article = $hasil->num_rows;
-$jumlah_gallery = 0; //sementaa
+$jumlah_article = $article->num_rows;
+$jumlah_gallery = $gallery->num_rows; 
 
 ?>
 
-<div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center pt-4">
+<div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center pt-4 " >
     <div class="col">
         <div class="card border-0 shadow-lg text-light" style="background: linear-gradient(135deg, #1f1c2c, #928dab);">
             <div class="card-body text-center p-5">

@@ -54,3 +54,14 @@ footer{
     background-size: cover;
     height: 100vh;
 }
+
+.page-item.active .page-link {
+    background-color: #343a40; 
+    color: #ffffff; 
+    border-color: #343a40; 
+    box-shadow: none; 
+}
+
+.page-link {
+    outline: none;
+}
